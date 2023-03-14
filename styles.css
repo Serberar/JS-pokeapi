@@ -1,0 +1,186 @@
+/* buscador */
+.divBuscador {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  padding: 15px;
+  z-index: 9999;
+}
+
+.divBuscador input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+/* logo */
+.divLogoGiratorio {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  border: none;
+  perspective: 1000px; 
+  margin-left: 40vw;
+}
+.divLogo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+.divLogoGiratorio:hover .divLogo {
+  transform: rotateY(180deg);
+}
+.divLogoDelantero, .divLogotrasero {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.divLogotrasero {
+  transform: rotateY(180deg);
+}
+/* bola */ 
+.pokeball {
+
+    animation: roll-in-out 30s ease-in-out infinite;
+  }
+  
+  @keyframes roll-in-out {
+    0% {
+      transform: translateX(0%) rotate(0deg);
+    }
+    50% {
+      transform: translateX(1000%) rotate(1800deg);
+    }
+    1000% {
+      transform: translateX(0%) rotate(360deg);
+    }
+  }
+
+/* lista */ 
+  .divContenedor{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px;
+    margin: 0 auto;
+  }
+  .divCarta {
+    position: relative;
+    transform-style: preserve-3d;
+    padding: 10px;
+    transition: transform 0.5s;
+    width: auto;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .datosCarta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    padding: 30px;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+.divTipo {
+  position: absolute;
+  text-align: center;
+  width: 90%;
+    top: 1%;
+}
+.divImagenCarta {
+  position: absolute;
+  top: 8%;
+  left: 5%;
+  width: 100%;
+  height: 33%;
+}
+
+.imagenCarta {
+  width: auto;
+  height: 100%;
+}
+
+.divNombre {
+  position: absolute;
+  width: 90%;
+  text-align: center;
+  top: 42%;
+
+}
+
+.divId{
+  position: absolute;
+  top: 68%;
+  left: 80%;
+
+}
+.divHabilidades {
+  position: absolute;
+  text-align: center;
+  width: 90%;
+  top: 50%;
+
+
+}
+.divTrasero{
+  padding-left: 17px;
+}
+
+/* carta giratoria */  
+
+.divCarta:hover {
+    animation: spin 2s linear infinite;
+  }
+  
+  .divCarta .divDelantero {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  .carta2 {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: perspective(500px) rotateY(0deg);
+    }
+    100% {
+      transform: perspective(500px) rotateY(360deg);
+    }
+  }
+
+/* estilos body */
+  body {
+    background-image: url(./img/fondo.png);
+    }
+    
